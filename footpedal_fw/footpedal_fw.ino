@@ -10,7 +10,7 @@ const int BTN_3 = MOUSE_LEFT;
 const int BTN_PUSH    = 0;
 const int BTN_RELEASE = 1;
 const int PIN[] = {8, 9, 10};                  // 利用PIN定義
-const int BTN_NUM  = sizeof(PIN) / sizeof(int);// ボタンの数
+const int PIN_NUM  = sizeof(PIN) / sizeof(int);// 利用PINの数
 
 // ペダルごとの動作定義
 static void push_btn_1(void){ Keyboard.press( BTN_1 ); }
@@ -20,21 +20,21 @@ static void release_btn_1(void){ Keyboard.release( BTN_1 ); }
 static void release_btn_2(void){ Mouse.release( BTN_2 ); }
 static void release_btn_3(void){ Mouse.release( BTN_3 ); }
 
-void (* const FUNC_BTNS[BTN_NUM][2])(void) = {
+void (* const FUNC_BTNS[PIN_NUM][2])(void) = {
     {push_btn_1, release_btn_1},
     {push_btn_2, release_btn_2},
     {push_btn_3, release_btn_3}
 };
 
 // グローバル変数
-int BEFORE_VALUE[BTN_NUM] = {HIGH, HIGH, HIGH};  // 押下情報記録用 (High -> Low検知式の為、初期値High)
+int BEFORE_VALUE[PIN_NUM] = {HIGH, HIGH, HIGH};  // 押下情報記録用 (High -> Low検知式の為、初期値High)
 
 /*
  * 通電時の初期化処理
  */
 void setup(){
   // ピン設定
-  for (int i=0 ; i < sizeof(PIN) / sizeof(int) ; i++) {
+  for (int i=0 ; i < PIN_NUM ; i++) {
       pinMode( PIN[i], INPUT_PULLUP );
   }
 }
@@ -43,7 +43,7 @@ void setup(){
  * 通電中のループ処理
  */
 void loop(){
-  for (int i=0 ; i < BTN_NUM ; i++) {
+  for (int i=0 ; i < PIN_NUM ; i++) {
 
     // ピン値読み取り
     int value = digitalRead( PIN[i] );
