@@ -22,14 +22,14 @@
 |プラスチックケース|1|
 
 ### 配線図
-<img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/image/device.jpg">
+<img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/doc/image/device.jpg" style=width:600px>
 
 ## FW焼き込み方法
 1. [Arduino IDE](https://www.arduino.cc/en/software) をインストール。
 2. 「footpedal_fw.ino」をダウンロードし、キー割り当てを任意の値に修正。
-3. ボード設定をArduino Microに変更する。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/image/board_select.png">
-4. シリアルポートを接続したArduino Microに変更する。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/image/port_select.png">
-5. 「マイコンボードの書き込む」を押下してFWを焼く。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/image/write_fw.png">
+3. ボード設定をArduino Microに変更する。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/doc/image/board_select.png" style=width:600px>
+4. シリアルポートを接続したArduino Microに変更する。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/doc/image/port_select.png" style=width:600px>
+5. 「マイコンボードの書き込む」を押下してFWを焼く。</br><img src="https://raw.githubusercontent.com/ATB-K/FootPedalFW/master/doc/image/write_fw.png">
 
 ## Author
 
